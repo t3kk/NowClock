@@ -4,7 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class MainActivity extends Activity {
@@ -13,8 +14,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView helloWorldTextView = (TextView) findViewById(R.id.helloWorldTextView);
-        helloWorldTextView.setText("YAY");
     }
 
 
@@ -35,5 +34,11 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void submitClicked(View view)
+    {
+        EditText helloWorldTextView = (EditText) findViewById(R.id.helloWorldTextView);
+        helloWorldTextView.setText( helloWorldTextView.getText()+" EXTRA!");
     }
 }
