@@ -1,11 +1,14 @@
 package com.ragglefraggle.polarclock;
 
 import android.app.Activity;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 
 public class MainActivity extends Activity {
@@ -14,6 +17,10 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        RelativeLayout mainLayout = (RelativeLayout)findViewById(R.id.mainLayout);
+        ImageView imageView = new ImageView(mainLayout.getContext());
+        imageView.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.earth));
+        mainLayout.addView(imageView);
     }
 
 
@@ -36,9 +43,4 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void submitClicked(View view)
-    {
-        EditText helloWorldTextView = (EditText) findViewById(R.id.helloWorldTextView);
-        helloWorldTextView.setText( helloWorldTextView.getText()+" EXTRA!");
-    }
 }
