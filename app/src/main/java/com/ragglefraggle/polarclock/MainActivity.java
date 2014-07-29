@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 
+
 public class MainActivity extends Activity {
 
     @Override
@@ -22,9 +23,7 @@ public class MainActivity extends Activity {
         ImageView imgView2 = (ImageView) findViewById(R.id.image2);
         Drawable drawable2 = getResources().getDrawable(R.drawable.smile);
         imgView2.setImageDrawable(drawable2);
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
