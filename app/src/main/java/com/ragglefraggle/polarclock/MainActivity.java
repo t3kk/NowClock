@@ -1,11 +1,11 @@
 package com.ragglefraggle.polarclock;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
+import android.widget.ImageView;
 
 
 public class MainActivity extends Activity {
@@ -14,6 +14,15 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView imgView = (ImageView) findViewById(R.id.image1);
+        Drawable drawable = getResources().getDrawable(R.drawable.polarclock);
+        imgView.setImageDrawable(drawable);
+
+        ImageView imgView2 = (ImageView) findViewById(R.id.image2);
+        Drawable drawable2 = getResources().getDrawable(R.drawable.smile);
+        imgView2.setImageDrawable(drawable2);
+
     }
 
 
@@ -35,10 +44,12 @@ public class MainActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+//        public void submitClicked(View view) {
+//            EditText helloWorldTextView = (EditText) findViewById(R.id.helloWorldTextView);
+//            helloWorldTextView.setText(helloWorldTextView.getText() + " EXTRA!");
+//        }
 
-    public void submitClicked(View view)
-    {
-        EditText helloWorldTextView = (EditText) findViewById(R.id.helloWorldTextView);
-        helloWorldTextView.setText( helloWorldTextView.getText()+" EXTRA!");
-    }
+
+
+
 }
