@@ -3,25 +3,32 @@ package com.ragglefraggle.polarclock;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
-
+import android.widget.RelativeLayout.LayoutParams;
 
 
 public class MainActivity extends Activity {
+
+    float scale = 0.61f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView imgView = (ImageView) findViewById(R.id.image1);
+        ImageView imgView1 = (ImageView) findViewById(R.id.image1);
         Drawable drawable = getResources().getDrawable(R.drawable.polarclock);
-        imgView.setImageDrawable(drawable);
+        imgView1.setImageDrawable(drawable);
 
         ImageView imgView2 = (ImageView) findViewById(R.id.image2);
-        Drawable drawable2 = getResources().getDrawable(R.drawable.smile);
+        Drawable drawable2 = getResources().getDrawable(R.drawable.earth);
+
+        imgView2.setScaleX(scale);
+        imgView2.setScaleY(scale);
+
         imgView2.setImageDrawable(drawable2);
     }
 
