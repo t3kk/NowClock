@@ -3,12 +3,11 @@ package com.ragglefraggle.polarclock;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
-import android.widget.RelativeLayout.LayoutParams;
-
 
 public class MainActivity extends Activity {
 
@@ -30,6 +29,10 @@ public class MainActivity extends Activity {
         imgView2.setScaleY(scale);
 
         imgView2.setImageDrawable(drawable2);
+        RotateAnimation rotateAnimation = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f );
+        rotateAnimation.setDuration(1200);
+        rotateAnimation.setRepeatCount(-1);
+        imgView2.startAnimation(rotateAnimation);
     }
 
     @Override
