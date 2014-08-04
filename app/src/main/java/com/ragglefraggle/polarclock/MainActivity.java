@@ -20,13 +20,13 @@ public class MainActivity extends Activity {
 
         //Put in the xkcd icon as a placeholder
         ImageView imgView1 = (ImageView) findViewById(R.id.image1);
-        Drawable drawable = getResources().getDrawable(R.drawable.polarclock);
+        Drawable drawable = getResources().getDrawable(R.drawable.nowtransparent);
         imgView1.setImageDrawable(drawable);
 
         //Load the earth image
         ImageView imgView2 = (ImageView) findViewById(R.id.image2);
         Drawable drawable2 = getResources().getDrawable(R.drawable.earth);
-        imgView2.setImageDrawable(drawable2);
+        //imgView2.setImageDrawable(drawable2);
 
         //Scale it to fit inside of the xkcd icon.
         imgView2.setScaleX(scale);
