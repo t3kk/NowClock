@@ -39,6 +39,7 @@ public class MainActivity extends Activity {
         //Rotate the earth to match current time
         Matrix matrix=new Matrix();
         imgView2.setScaleType(ImageView.ScaleType.MATRIX);   //required
+        Log.d("WOOO", "Rotation offset! "+ calculateRotationOffset());
         matrix.postRotate(calculateRotationOffset());
         imgView2.setImageMatrix(matrix);
 
@@ -88,7 +89,7 @@ public class MainActivity extends Activity {
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MILLISECOND, 0);
-        long minutesPassedMidnight = now - cal.getTimeInMillis();
+        long minutesPassedMidnight = (now - cal.getTimeInMillis())/(1000*60);
         double fractionOfDay = (double)minutesPassedMidnight/(double)MINUTES_IN_A_DAY;
         float degrees = (float)(fractionOfDay*360);
         return degrees;
