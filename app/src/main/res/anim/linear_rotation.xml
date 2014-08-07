@@ -3,7 +3,7 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:shareInterpolator="false">
     <rotate
-        android:duration="30000"
+        android:duration="3000"
         android:fromDegrees="0"
         android:toDegrees="360"
         android:interpolator="@android:anim/linear_interpolator"
