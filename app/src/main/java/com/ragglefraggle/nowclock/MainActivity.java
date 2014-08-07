@@ -6,12 +6,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 
-    float scale = 0.61f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +27,6 @@ public class MainActivity extends Activity {
         Drawable drawable2 = getResources().getDrawable(R.drawable.world_transparent);
         imgView2.setImageDrawable(drawable2);
 
-        //Scale it to fit inside of the xkcd icon.
-//        imgView2.setScaleX(scale);
-//        imgView2.setScaleY(scale);
 
         /*Build a rotation to apply to the image view.
         it will start at 0 degrees and rotate to 360 and then start again.
@@ -38,10 +34,8 @@ public class MainActivity extends Activity {
         Right now it seems to pause before the animation restarts because of how the frame rate lines up with the duration of the animation and our rotation
         If we were to do some calculations we can avoid this.
         */
-        RotateAnimation rotateAnimation = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f );
-        rotateAnimation.setDuration(60000);
-        rotateAnimation.setRepeatCount(-1);
-        imgView2.startAnimation(rotateAnimation);
+        Animation linearRotateAnimation = AnimationUtils.loadAnimation(this, R.anim.linear_rotation);
+        imgView2.startAnimation(linearRotateAnimation);
     }
 
     @Override
